@@ -1,0 +1,39 @@
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+eclipse.project.name = appName + '-core'
+
+dependencies {
+
+  testImplementation 'org.mockito:mockito-core:3.12.4'
+  testImplementation 'org.mockito:mockito-junit-jupiter:3.12.4'
+  testImplementation 'org.powermock:powermock-module-junit4:2.0.9'
+  testImplementation 'org.powermock:powermock-api-mockito2:2.0.9'
+
+  implementation "com.badlogicgames.gdx:gdx:1.10.0"
+  implementation "com.badlogicgames.gdx:gdx-box2d:1.10.0"
+  // Native libraries for desktop
+  implementation "com.badlogicgames.gdx:gdx-platform:1.11.0:natives-desktop"
+  implementation "com.badlogicgames.gdx:gdx-box2d-platform:1.11.0:natives-desktop"
+  testImplementation "com.badlogicgames.gdx:gdx-backend-headless:1.10.0"
+  testImplementation "com.badlogicgames.gdx:gdx-platform:1.10.0:natives-desktop"
+
+
+  api "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+  api "com.badlogicgames.gdx:gdx:$gdxVersion"
+  testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3' //for junit
+  testImplementation 'org.mockito:mockito-core:4.11.0'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+  testImplementation 'org.mockito:mockito-core:4.5.1'
+  testImplementation 'org.mockito:mockito-junit-jupiter:4.5.1'
+
+  if (enableGraalNative == 'true') {
+    implementation "io.github.berstanio:gdx-svmhelper-annotations:$graalHelperVersion"
+  }
+}
+
+test {
+  useJUnitPlatform()
+  testLogging {
+    events "passed", "skipped", "failed"
+  }
+}

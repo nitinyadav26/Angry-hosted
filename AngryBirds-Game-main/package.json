@@ -1,0 +1,16 @@
+{
+  "name": "angrybirds-game-main",
+  "version": "1.0.0",
+  "description": "A LibGDX project inspired by the classic Angry Birds gameplay, featuring physics-based mechanics, diverse bird and pig types, multiple levels, and an immersive gaming experience. This project was generated using gdx-liftoff.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
